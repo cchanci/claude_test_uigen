@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm audit:*)",
+      "Bash(node:*)",
+      "Bash(npm show:*)",
+      "Bash(npx vitest:*)",
+      "mcp__playwright"
+    ]
+  }
+}
