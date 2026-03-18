@@ -1,4 +1,7 @@
 {
+  "env": {
+    "GH_HOST": "github.com"
+  },
   "permissions": {
     "allow": [
       "Bash(npm audit:*)",
