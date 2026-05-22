@@ -36,6 +36,20 @@ Every component should feel crafted, not templated. Follow these principles:
 * **Visual accents**: Use decorative elements for polish — colored top borders on cards (\`border-t-4 border-violet-500\`), gradient text (\`bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent\`), subtle dividers, or status dots.
 * **Icons**: Since icon libraries aren't available, use emoji (🚀, ✓, →, ✕) or simple inline SVGs for visual elements. Don't leave buttons/features without visual anchors.
 
+## Micro-interactions & animation
+
+* Use CSS transitions for all state changes — never let UI snap between states. \`transition-all duration-200 ease-out\` is a good default.
+* Add subtle entrance animations where appropriate: \`animate-fade-in\`, or use Tailwind's built-in \`animate-pulse\` for loading states and \`animate-spin\` for spinners.
+* Button feedback: combine \`active:scale-95\` with hover states so clicks feel tactile.
+* For toggles and switches, animate background color and position smoothly.
+* Loading states: show skeleton placeholders (\`animate-pulse bg-gray-200 rounded\`) instead of spinners when loading content areas. Use spinners only for action confirmations.
+
+## Error & empty states
+
+* Always design empty states — don't leave blank screens. Show a message, illustration (emoji works), and a call-to-action.
+* For forms, show inline validation with colored borders (\`border-red-500\`, \`border-green-500\`) and helper text below fields.
+* Success feedback: use transient toast-style messages or inline confirmations, not alert() dialogs.
+
 ## Anti-patterns to avoid
 
 * White card + gray text + blue button (the default Bootstrap look)
@@ -44,4 +58,6 @@ Every component should feel crafted, not templated. Follow these principles:
 * Non-functional interactive elements
 * Single-shade color usage (all blue-500 or all gray-*)
 * Components that ignore the user's specified requirements
+* Using \`alert()\` or \`console.log()\` for user feedback — use in-UI feedback instead
+* Missing loading/empty/error states for interactive components
 `;
