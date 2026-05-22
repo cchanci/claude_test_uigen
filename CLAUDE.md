@@ -33,7 +33,12 @@ Copy `.env.example` to `.env`. `ANTHROPIC_API_KEY` is optional — the app falls
 
 ## Code style
 
-Use comments sparingly — only for complex or non-obvious logic.
+- Use comments sparingly — only for complex or non-obvious logic.
+- `@/*` path alias maps to `./src/*` — use it for all imports.
+
+## Tech stack
+
+Next.js 15 (App Router, Turbopack), React 19, TypeScript, Tailwind CSS v4, Prisma + SQLite, Vercel AI SDK, `@ai-sdk/anthropic`.
 
 ## Architecture
 
@@ -79,7 +84,7 @@ JWT stored in an httpOnly cookie (`session`, 7-day expiry). `src/middleware.ts` 
 
 ### Database
 
-Prisma with SQLite (dev). Schema defined in `prisma/schema.prisma` file Reference it anytime you need to understand the structure of data stored in the databse. Two models: `User` (email + bcrypt password) and `Project` (stores chat `messages` and serialized file system `data` as JSON strings). Prisma client is generated into `src/generated/prisma`.
+Prisma with SQLite (dev). Schema defined in `prisma/schema.prisma` file Reference it anytime you need to understand the structure of data stored in the database. Two models: `User` (email + bcrypt password) and `Project` (stores chat `messages` and serialized file system `data` as JSON strings). Prisma client is generated into `src/generated/prisma`.
 
 ### Testing
 
